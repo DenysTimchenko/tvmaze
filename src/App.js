@@ -1,13 +1,16 @@
 import React from "react";
-
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>Hello world</h1>
-      </div>
-    )
-  }
-}
+import {BrowserRouter as Router, Switch} from "react-router-dom";
+import {Navbar} from "./components/Navbar";
+import Routes from "./routes";
+const App = () => (
+  <div className="container fluid pt-4">
+    <Router>
+      <Navbar />
+      <Switch>
+        <Routes />
+      </Switch>
+    </Router>
+  </div>
+)
 
 export default App;
