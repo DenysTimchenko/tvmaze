@@ -1,11 +1,14 @@
 import React from 'react'
-import {NavLink} from 'react-router-dom'
+import {NavLink, Link} from 'react-router-dom'
 
 export const Navbar = () => (
     <nav className="navbar navbar-dark navbar-expand bg-primary">
-        <div className="navbar-brand">
+        <Link 
+            className="navbar-brand"
+            to="/" 
+        >
             TVMaze
-        </div>
+        </Link>
 
         <ul className="navbar-nav">
             <li className="navbar-item">
@@ -14,15 +17,15 @@ export const Navbar = () => (
                     to="/" 
                     exact
                 >
-                    Main
+                    Show
                 </NavLink>
             </li>
             <li className="navbar-item">
                 <NavLink 
                     className="nav-link" 
-                    to="/episode" 
+                    to="/episodes" 
                 >
-                    Episode
+                    Episodes
                 </NavLink>
             </li>
         </ul>

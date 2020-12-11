@@ -11,15 +11,22 @@ class ShowDetails extends Component {
     
     render() {
         return (
-            <div className="content">
-                <h3>{this.props.show.name}</h3>
-                <SanitizedHTML html={this.props.show.summary} allowedTags={['p', 'b']} />
+            <div className="container">
+                <h3 className="mt-4 mb-4">{this.props.show.name}</h3>
+                <div className="row mb-4">
+                    <div className="col-lg-3 col-md-4 mb-4 text-md-center">
+                        <a href={this.props.show.image} rel="noreferrer" target="_blank">
+                            <img src={this.props.show.image} alt={this.props.show.name} title={this.props.show.name} />
+                        </a>
+                    </div>
+                    <div className="col-lg-9 col-md-8 mb-4">
+                        <SanitizedHTML html={this.props.show.summary} allowedTags={['p', 'b']} />
+                    </div>
+                </div>                
             </div>
         );
     }
 }
-
-
 
 const mapStateToProps = state => {
     return {
